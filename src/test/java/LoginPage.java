@@ -15,7 +15,7 @@ public class LoginPage extends BasePage {
 
     @FindBy(xpath = "//input[@name='login-button']")
     private WebElement loginButton;
-
+    // takes username and password from user to login
     public void login(String username, String password){
         userInput.sendKeys(username);
         passwordInput.sendKeys(password);
