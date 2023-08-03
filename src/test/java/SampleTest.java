@@ -34,10 +34,9 @@ public class SampleTest {
         List<String> expectedItem = new ArrayList<>();
         expectedItem.add("Sauce Labs Backpack");
         expectedItem.add("Sauce Labs Bolt T-Shirt");
-        checkoutPge.pickItems();
-        checkoutPge.checkout();
-        checkoutPge.userInfo("Ram", "noLastName", "12345");
-        List<String> itemnames = checkoutPge.getItemNames();
+
+        List<String> itemnames = checkoutPge.NewMethod("Ram", "noLastName");
+
         Assert.assertEquals(itemnames, expectedItem, "item not in checkout page");
     }
     @AfterClass
