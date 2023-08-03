@@ -35,7 +35,7 @@ public class SampleTest {
         expectedItem.add("Sauce Labs Backpack");
         expectedItem.add("Sauce Labs Bolt T-Shirt");
 
-        List<String> itemnames = checkoutPge.NewMethod("Sandesh", "noLastName");
+        List<String> itemnames = checkoutPge.NewMethod("Sandesh", "Pathak");
 
         Assert.assertEquals(itemnames, expectedItem, "item not in checkout page");
     }
