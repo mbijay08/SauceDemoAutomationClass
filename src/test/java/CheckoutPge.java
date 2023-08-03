@@ -56,7 +56,7 @@ public class CheckoutPge extends BasePage {
     public List<String> NewMethod(String string1, String string2) {
         pickItems();
         checkout();
-        userInfo(string1, string2, "12345");
+        userInfo(string1, string2, "12346");
         return getItemNames();
     }
 
