@@ -31,13 +31,12 @@ public class SampleTest {
     }
     @Test(priority = 3)
     public void verifyCheckoutPageItems(){
-        List<String> expectedItem = new ArrayList<>();
-        expectedItem.add("Sauce Labs Backpack");
-        expectedItem.add("Sauce Labs Bolt T-Shirt");
-
-        List<String> itemnames = checkoutPge.NewMethod("Sandesh", "Pathak");
-
-        Assert.assertEquals(itemnames, expectedItem, "item not in checkout page");
+        checkoutPge.pickItems();
+        checkoutPge.checkout();
+        checkoutPge.userInfo("myFirstName", "myLastName","12345");
+        List<String> expected = checkoutPge.getExpectedItem("Sauce Labs Backpack","Sauce Labs Bolt T-Shirt");
+        List<String>actualItems= checkoutPge.getItemNames();
+        Assert.assertEquals(actualItems, expected, "item not in checkout page");
     }
     @AfterClass
     public void tearDown(){
