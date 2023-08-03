@@ -53,11 +53,12 @@ public class CheckoutPge extends BasePage {
         return itemNames.stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
-    /*public List<String> itemNames(){
-        List<String> names = new ArrayList<>();
-        for(WebElement item : itemNames){
-            names.add(item.getText());
-        }
-        return names;
-    }*/
-}
+    public List<String> getExpectedItem(String string1, String string2) {
+        List<String> expectedItem = new ArrayList<>();
+        expectedItem.add(string1);
+        expectedItem.add(string2);
+        return expectedItem;
+    }
+
+
+    }
