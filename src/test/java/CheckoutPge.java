@@ -52,6 +52,12 @@ public class CheckoutPge extends BasePage {
     public List<String> getItemNames(){
         return itemNames.stream().map(WebElement::getText).collect(Collectors.toList());
     }
+    public List<String> getExpectedItem(String string1, String string2){
+        List<String> expectedItem = new ArrayList<>();
+        expectedItem.add(string1);
+        expectedItem.add(string2);
+        return expectedItem;
+    }
 
     /*public List<String> itemNames(){
         List<String> names = new ArrayList<>();
