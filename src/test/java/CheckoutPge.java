@@ -1,6 +1,7 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.util.Strings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,4 +61,11 @@ public class CheckoutPge extends BasePage {
         }
         return names;
     }*/
+public List<String> getExpectedItem(String string1, String string2) {
+    List<String> expectedItem = new ArrayList<>();
+    expectedItem.add(string1);
+    expectedItem.add(string2);
+    return expectedItem;
 }
+}
+
