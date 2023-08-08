@@ -1,9 +1,16 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SampleTest {
 
@@ -14,15 +21,25 @@ public class SampleTest {
 
     @BeforeClass
     public void setUp(){
+        try{
         driver = new ChromeDriver();
+        //implicit wait
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         checkoutPge = new CheckoutPge(driver);
+         }catch (Exception e) {
+            System.out.println("Failed to set up Web driver");
+        }
     }
     @Test(priority = 1)
     public void loginTest(){
         loginPage.login("standard_user", "secret_sauce");
+        // explicit wait
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.urlContains("/inventory.html"));
+
         Assert.assertTrue(homePage.isOnHomePage(), "login failed, couldn't get to homepage.");
     }
     @Test(priority = 2)
