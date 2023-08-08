@@ -1,3 +1,6 @@
+package Pages;
+
+import Pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +20,7 @@ public class LoginPage extends BasePage {
     private WebElement loginButton;
 
     public void login(String username, String password){
+        //Wait<WebDriver> wat = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
         userInput.sendKeys(username);
         passwordInput.sendKeys(password);
         loginButton.click();
