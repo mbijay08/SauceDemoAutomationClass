@@ -18,7 +18,7 @@ public class LoginPage extends BasePage {
 
     @FindBy(xpath = "//input[@name='login-button']")
     private WebElement loginButton;
-
+    // takes username and password from user to login
     public void login(String username, String password){
         //Wait<WebDriver> wat = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
         userInput.sendKeys(username);

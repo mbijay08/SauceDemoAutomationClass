@@ -14,10 +14,11 @@ public class HomePage extends BasePage {
     @FindBy(className = "inventory_item")
     private List<WebElement> inventoryItems;
 
+    //to validate if we are on homepage or not by checking inventory
     public boolean isOnHomePage(){
         return driver.getCurrentUrl().contains("inventory.html");
     }
-
+    // returns the count of inventory available
     public int getInventoryCount(){
         return inventoryItems.size();
     }
