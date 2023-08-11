@@ -26,6 +26,7 @@ public class SampleTest {
     @Test(priority = 1)
     public void loginTest(){
         loginPage.login("standard_user", "secret_sauce");
+        loginPage.loginBtn();
         Assert.assertTrue(homePage.isOnHomePage(), "login failed, couldn't get to homepage.");
     }
     @Test(priority = 2)
